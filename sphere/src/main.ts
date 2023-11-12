@@ -1,6 +1,7 @@
 import * as THREE from 'three'
 import './style.css'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+// import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { OrbitControls } from 'three/addons/controls/OrbitControls'
 import gsap from 'gsap'
 
 const scene = new THREE.Scene()
@@ -10,11 +11,19 @@ const material = new THREE.MeshStandardMaterial({
     color: '#00ff83',
     roughness: 0.4
 })
-
-
-
 const mesh = new THREE.Mesh(sphere, material)
 scene.add(mesh)
+
+const sphere2 = new THREE.SphereGeometry(3, 64, 64)
+const sphereMaterial = new THREE.MeshStandardMaterial({
+    color: 'red',
+    roughness: 0.4
+})
+const sphere2Mesh = new THREE.Mesh(sphere2, sphereMaterial)
+sphere2Mesh.attach
+scene.add(sphere2Mesh)
+
+
 
 //sizes
 const sizes = {
